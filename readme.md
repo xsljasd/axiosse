@@ -1,0 +1,3 @@
+# axiosSE
+最近发现与大模型AI相关的业务越来越多，传统的axios接口无法适应流式传输，fetchEventSource相对于全场景的service send event有过于沉重，尝试使用原生eventSource编写轻量型流式接口方案，希望能使axios的用户无痛切换到该接口方案。
+
