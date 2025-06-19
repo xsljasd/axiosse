@@ -50,7 +50,7 @@ class SSEAxiosLike {
         es.onmessage = async (event) => {
             let data: any = event.data;
             try {
-                data = JSON.parse(event.data);
+                data = safeParseJSON(event.data, {});
             } catch {}
             const resp = await this.interceptors.response.run(data);
             onMessage?.(resp, event);
@@ -82,7 +82,7 @@ class SSEAxiosLike {
         es.onmessage = async (event) => {
             let data: any = event.data;
             try {
-                data = JSON.parse(event.data);
+                data = safeParseJSON(event.data, {});
             } catch {}
             const resp = await this.interceptors.response.run(data);
             queue.push(resp);
